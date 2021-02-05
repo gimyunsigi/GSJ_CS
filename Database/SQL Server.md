@@ -128,7 +128,7 @@ ADD FILE
 TO FILEGROUP Test1FG1;
 GO
 ```
-AdventureWorks2012 데이터베이스에 'Test1FG1'이름의 파일그룹을 만듬
+AdventureWorks2012 데이터베이스에 'Test1FG1'이름의 파일그룹을 만듬   
 해당 파일 그룹에 5MB의 파일을 추가
 
 
