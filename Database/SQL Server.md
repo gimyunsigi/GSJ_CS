@@ -69,3 +69,67 @@ sys.databases의 호출자가 데이터베이스의 소유자가 아니고 데�
 
 호출자가 연결된 데이터베이스는 항상 sys.databases에서 볼 수 있음   
 
+### Transact-SQL 사용
+
+1. 데이터 베이스 엔진에 연결
+2. 표준 도구 모음에서 새 쿼리 선택
+3. 다음 쿼리를 사용하여 실행
+
+```
+USE AdventureWorks2012;  
+GO  
+SELECT name, database_id, create_date  
+FROM sys.databases ;  
+GO  
+```
+
+SQL Server 인스턴스의 데이터베이스 목록을 반환   
+목록에는 데이터베이스 이름, ID, 만든 날짜가 포함됨   
+
+------------------------
+## 데이터 또는 로그 파일 추가
+
+### 제한 사항
+BACKUP 문이 실행 중인 동안에 불가능   
+각 데이터베이스에 최대 32,767개의 파일과 32,767개의 파일 그룹 지정 가능
+
+### 권한
+
+데이터베이스에 대한 ALTER권한이 필요
+
+### Transact-SQL 사용
+
+1. 데이터 베이스 엔진에 연결
+2. 표준 도구 모음에서 새 쿼리 선택
+3. 다음 쿼리를 사용하여 실행
+
+```
+USE master
+GO
+ALTER DATABASE AdventureWorks2012
+ADD FILEGROUP Test1FG1;
+GO
+ALTER DATABASE AdventureWorks2012 
+ADD FILE 
+(
+    NAME = test1dat3,
+    FILENAME = 'C:\Program Files\Microsoft SQL Server\MSSQL10_50.MSSQLSERVER\MSSQL\DATA\t1dat3.ndf',
+    SIZE = 5MB,
+    MAXSIZE = 100MB,
+    FILEGROWTH = 5MB
+),
+(
+    NAME = test1dat4,
+    FILENAME = 'C:\Program Files\Microsoft SQL Server\MSSQL10_50.MSSQLSERVER\MSSQL\DATA\t1dat4.ndf',
+    SIZE = 5MB,
+    MAXSIZE = 100MB,
+    FILEGROWTH = 5MB
+)
+TO FILEGROUP Test1FG1;
+GO
+```
+AdventureWorks2012 데이터베이스에 'Test1FG1'이름의 파일그룹을 만듬
+해당 파일 그룹에 5MB의 파일을 추가
+
+
+
