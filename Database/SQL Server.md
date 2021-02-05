@@ -41,7 +41,7 @@ master 데이터베이스의 CREATE DATABASE 권한이 있거나 CREATE ANY DATA
 USE master ;  
 GO  
 CREATE DATABASE Sales  
-ON   //ㅁㅇㄴㄴㄻㄴㅇㄹ
+ON   
 ( NAME = Sales_dat,  
     FILENAME = 'C:\Program Files\Microsoft SQL Server\MSSQL13.MSSQLSERVER\MSSQL\DATA\saledat.mdf',  
     SIZE = 10,  
@@ -55,3 +55,10 @@ LOG ON
     FILEGROWTH = 5MB ) ;  
 GO  
 ```
+keyword PRIMARY가 사용되지 않았기 때문에 첫번째 파일인 Sales_dat이 주 파일이 됨   
+'SIZE'에서 MB인지 KB인지 명시되지 않았기 때문에 MB로 할당됨   
+Sales_log에서 'SIZE'가 MB로 할당되었기 때문에 MB로 할당됨   
+
+----------------
+
+
