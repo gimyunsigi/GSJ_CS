@@ -41,7 +41,7 @@ master 데이터베이스의 CREATE DATABASE 권한이 있거나 CREATE ANY DATA
 USE master ;  
 GO  
 CREATE DATABASE Sales  
-ON   
+ON   //ㅁㅇㄴㄴㄻㄴㅇㄹ
 ( NAME = Sales_dat,  
     FILENAME = 'C:\Program Files\Microsoft SQL Server\MSSQL13.MSSQLSERVER\MSSQL\DATA\saledat.mdf',  
     SIZE = 10,  
