@@ -1,6 +1,6 @@
 # SQL Server
 
-SQL Server의 데이터베이스는 구조화된 데이터의 특정 집합이 저장되는 테이블 모음으로 구성
+SQL Server의 데이터베이스는 구조화된 데이터의 특정 집합이 저장되는 테이블 모음으로 구성\n
 행 : record, tuple
 열 : attribute
 
