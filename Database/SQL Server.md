@@ -66,5 +66,6 @@ Sales_log에서 'SIZE'가 MB로 할당되었기 때문에 MB로 할당됨
 sys.databases의 호출자가 데이터베이스의 소유자가 아니고 데이터베이스가 master 또는 tempdb가 아닐 경우   
 > 서버 수준의 ALTER ANY DATABASE 또는 VIEW ANY DATABASE 권한이 있어야함   
 > 또는 master 데이터베이스에서 CREATE DATABASE 권한이 있어야함
+
 호출자가 연결된 데이터베이스는 항상 sys.databases에서 볼 수 있음   
 
